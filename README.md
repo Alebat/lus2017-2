@@ -27,7 +27,7 @@ A model's features are represented through a file named in the form __feat.*__.
 The report explains a subset of the present files, the ones not mentoned contain comments or are attempt not worth explaining in the report.
 
 ### Training
-To train a model the script __full__ can eb used: it takes as parameter the number corresponding to the feature description.
+To train a model the script __full__ can be used: it takes as parameter the number corresponding to the feature description.
 
 This script generates three files:
 - model.* containing the binary learned model
@@ -45,17 +45,17 @@ A script for cross validation is present: __cross.py__. This script is in python
 Usage: cross.py n-of-folds complete-train-set-file {r for shuffle|n for not} features-file
 
 ### Example: model 19
-> # Build train and test sets
-> sh extract
-> # train-test-eval
-> sh full 19
-> # view errors
-> sh python check.py results.19
+    # Build train and test sets
+    sh extract
+    # train-test-eval
+    sh full 19
+    # view errors
+    sh python check.py results.19
 
 ### Hyper-params tuning
 To tune the f (cutoff freq) parameter the script __full-tune-f__ is available; so for the c parameter (cost) __full-tune-c__. They take as arguments the number of the model description (where to read the features) and the parameter to use.
 
 ### Membership features sets
-The files named __f.*__ contain the sets used by __feature.py_ to build the membership features.
+The files named __f.*__ contain the sets used by __feature.py__ to build the membership features.
 
 
