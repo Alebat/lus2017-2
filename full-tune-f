@@ -1,0 +1,9 @@
+echo --------- $1 - f: $2 ----------
+
+crf_learn -f 1 -f $2 -e 0.001 -a CRF-L2 -p 8 feat.$1 train model.f.$2.$1
+
+crf_test -m model.f.$2.$1 test > results.f.$2.$1
+
+./conlleval.pl -d "\t" < results.f.$2.$1 > eval.$1.f.$2
+
+cat eval.$1.f.$2

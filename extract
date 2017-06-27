@@ -1,0 +1,11 @@
+
+cut NLSPARQL.test.feats.txt -f 1 > test.words
+cut NLSPARQL.test.data -f 2 > test.labels
+cut NLSPARQL.test.feats.txt -f 2,3 > test.poslex
+python features.py test.words | paste test.poslex - | paste test.words - | paste - test.labels | sed s/\\t\\t\\t// > test
+
+cut NLSPARQL.train.feats.txt -f 1 > train.words
+cut NLSPARQL.train.data -f 2 > train.labels
+cut NLSPARQL.train.feats.txt -f 2,3 > train.poslex
+python features.py train.words | paste train.poslex - | paste train.words - | paste - train.labels | sed s/\\t\\t\\t// > train
+
